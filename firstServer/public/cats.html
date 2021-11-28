@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="/index.css"/>
+    </head>
+    <body>
+        <h1>Cats</h1>
+        <!-- when creating a post request we need to give the form tag: an action attribute (a value to where we want to send this request to); 
+        a method attribute (in this case, post. Upon clicking on submit, we'll send this method - post request - to the url we especified in the action attribute);
+        a name attribute to the input tags/fields, in order to have access to was inserted into it-->
+        <img src="https://ychef.files.bbci.co.uk/976x549/p07ryyyj.jpg">
+        <form action="/yoururl" method="POST">
+            <input autocomplete="off" type="text" placeholder="Search" name="text-value">
+            <input type="submit">
+        </form> 
+    </body>
+</html>
+
+
+<!--Post requests ask the server to accept/store data which is enclosed in the body of the requests
+Often used when sunmitting forms-->
