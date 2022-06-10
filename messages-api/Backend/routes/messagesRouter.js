@@ -9,17 +9,16 @@ import {
 
 const router = express.Router();
 
-router.get("/", async (req, res) => {
-  res.status(200).send(await getMessages());
+router.post("/", async (req, res) => {
+  res.status(200).send(await getMessages(req.body.sent_by));
 });
 router.get("/:idRequest", async (req, res) => {
   res.status(200).send(await getMessage(req.params.idRequest));
 });
-router.post("/", async (req, res) => {
+router.post("/i", async (req, res) => {
   res.status(201).send(await addMessage(req.body));
 });
 router.put("/:idRequest", async (req, res) => {
-  console.log("oooooo", await editMessage(req.params.idRequest, req.body.message));
   await editMessage(req.params.idRequest, req.body.message);
   res.status(200).send({ id: req.params.idRequest, message: req.body.message });
 });

@@ -1,8 +1,8 @@
 import { runQuery } from "../mysql_db.js";
 import { messagesArrayToStrings } from "../services/messagesServices.js";
 
-export const getMessages = async () => {
-  const result = await runQuery(`SELECT * FROM messages`);
+export const getMessages = async (sent_by) => {
+  const result = await runQuery(`SELECT message FROM messages WHERE sent_by = '${sent_by}'`);
   return messagesArrayToStrings(result);
 };
 
